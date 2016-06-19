@@ -1,0 +1,7 @@
+{
+    "title": "Restricted Pages",
+    "version": "0.01",
+    "name": "RestrictedPages",
+    "description": "Restrict page access to registered users only",
+    "author": "Truls Rustad Fossum"
+}
