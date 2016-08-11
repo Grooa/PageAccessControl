@@ -7,15 +7,21 @@ class Event
 
 	public static function ipBeforeController($data)
 	{
-		$page = ipContent()->getCurrentPage();
+		// Allow editing page in managemnt mode
+		if (ipIsManagementState()) {
+			return;
+		}
 
+		// This only works for pages
+		$page = ipContent()->getCurrentPage();
 		if (!$page) {
 			return;
 		}
 
-		$pageId = $page->getId();
+		// Check restrictions
+		$group = Model::getGroup($page->getId());
 
-		if (Model::getGroup($pageId) !== null && !ipUser()->loggedIn()) {
+		if ($group !== null && !ipUser()->loggedIn()) {
 			header('Location: ' . ipRouteUrl('User_login'));
 			die();
 		}
