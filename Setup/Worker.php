@@ -1,6 +1,6 @@
 <?php
 
-namespace Plugin\RestrictedPages\Setup;
+namespace Plugin\PageAccessControl\Setup;
 
 
 class Worker
