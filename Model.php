@@ -63,7 +63,7 @@ class Model
 
 		if (
 			!$policy ||
-			$policy == 'none' ||
+			$policy == 'inherit' ||
 			$policy == 'registered' && $user->isLoggedIn()
 		) {
 			return true;
